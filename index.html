@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookmarker</title>
+</head>
+<body>
+    <header class="py-5 position-relative">
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="py-2 position-relative">Bookmarker</h1>
+            <form class="w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+                <h2>
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <div class="w-100 d-flex flex-column  justify-content-center">
+                    <label for="bookmark" class="pb-3">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                        Site Name
+                    </label>
+                    <input type="text" placeholder="Bookmark Name" id="bookmark" class="form-control">
+                </div>
+                <div class="w-100 d-flex flex-column  justify-content-center">
+                    <label for="url" class="pb-3">
+                        <i class="fa-solid fa-link"></i>
+                        Site URL
+                    </label>
+                    <input type="url" placeholder="Website URL" id="bookmarkurl" class="form-control">
+                </div>
+                <button type="button" onclick="submitBookmark()" class="btn px-5" id="addBtn">Submit</button>
+            </form>
+            <table class="table mt-4 text-center bg-light">
+                <thead class="text-capitalize">
+                    <th>index</th>
+                    <th>Website Name</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody id="tableData">
+                </tbody>
+            </table>
+        </div>
+        <div class="box-info position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none"id="box">
+            <div class="box-content bg-white p-4 rounded-2 shadow-lg">
+                <div class="box w-100 d-flex justify-content-between align-items-center mb-4">
+                    <div class="circle d-flex">
+                        <span class="c1 rounded-circle me-2"></span>
+                        <span class="c2 rounded-circle me-2"></span>
+                        <span class="c3 rounded-circle me-2"></span>
+                    </div>
+                    <button class="btn border-0" id="close" onclick="Close()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <h4>Site Name or Url is not valid, Please follow the rules below :</h4>
+                <ol class="list-unstyled">
+                    <li>
+                        <i class="fa-regular fa-circle-right"></i>
+                        Site name must contain at least 3 characters
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-circle-right"></i>
+                        Site URL must be a valid one
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </header>
+    <script src="./js/style.js"></script>
+</body>
+</html>
